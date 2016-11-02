@@ -218,10 +218,8 @@ public class AdWebView extends WebView {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, IMAGE_UNSPECIFIED);
         intent.putExtra("crop", "true");
-        // aspectX aspectY �ǿ�ߵı���  
         intent.putExtra("aspectX", 2);
         intent.putExtra("aspectY", 1);
-        // outputX outputY �ǲü�ͼƬ���  
         intent.putExtra("outputX", 200);
         intent.putExtra("outputY", 100);
         intent.putExtra("scale", true);
