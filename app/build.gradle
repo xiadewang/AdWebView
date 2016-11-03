@@ -1,27 +1,28 @@
 apply plugin: 'com.android.library'
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'adwebview'
-
-    publishedGroupId = 'com.xdw.adwebview'
-    libraryName = 'AdWebView'
-    artifact = 'adwebview'
-
-    libraryDescription = 'A advanced webview for android'
-
-    siteUrl = 'https://github.com/xiadewang/AdWebView'
-    gitUrl = 'https://github.com/xiadewang/AdWebView.git'
-
-    libraryVersion = '1.0'
-
-    developerId = 'xiadewang'
-    developerName = 'xiadewang'
-    developerEmail = 'qq263201361@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+apply plugin: 'com.novoda.bintray-release'
+//ext {
+//    bintrayRepo = 'maven'
+//    bintrayName = 'adwebview'
+//
+//    publishedGroupId = 'com.xdw.adwebview'
+//    libraryName = 'AdWebView'
+//    artifact = 'adwebview'
+//
+//    libraryDescription = 'A advanced webview for android'
+//
+//    siteUrl = 'https://github.com/xiadewang/AdWebView'
+//    gitUrl = 'https://github.com/xiadewang/AdWebView.git'
+//
+//    libraryVersion = '1.0'
+//
+//    developerId = 'xiadewang'
+//    developerName = 'xiadewang'
+//    developerEmail = 'qq263201361@gmail.com'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -46,5 +47,14 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
 }
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+publish {
+    userOrg = 'xiadewang'//bintray.com用户名
+    groupId = 'com.xdw.adwebview'//jcenter上的路径
+    artifactId = 'adwebview'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'A advanced webview for android'//描述，不重要
+    website = 'https://github.com/xiadewang/AdWebView'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+}
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
